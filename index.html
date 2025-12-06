@@ -1,150 +1,121 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Quarterly Earnings Report – Interactive RevealJS Deck</title>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Quarterly Earnings Presentation</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <!-- Reveal.js core styles -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css">
 
-    <!-- Reveal.js core CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reveal.css">
-    <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/theme/black.css" id="theme">
+  <!-- Code highlighting -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css">
+</head>
 
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/plugin/highlight/monokai.css">
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
+<body>
+<div class="reveal">
+  <div class="slides">
 
-        <!-- TITLE SLIDE -->
-        <section>
-          <h2>Q4 Quarterly Earnings Report</h2>
-          <p>Technical Consultant – Major Financial Institution</p>
-          <p style="margin-top: 1em; font-size: 0.8em;">
-            Contact: <strong>22f2001173@ds.study.iitm.ac.in</strong>
-          </p>
-          <aside class="notes">
-            Welcome stakeholders. Introduce yourself and the purpose:
-            a modern, interactive overview of quarterly earnings,
-            with focus on clarity and transparency.
-          </aside>
-        </section>
+    <!-- Slide: EMAIL INCLUDED -->
+    <section>
+      <h2>Quarterly Earnings Report</h2>
+      <p>Prepared by: Technical Consultant</p>
+      <p>Email: <strong>22f2001173@ds.study.iitm.ac.in</strong></p>
 
-        <!-- MARKDOWN SLIDE (Requirement: at least one slide in Markdown) -->
-        <section data-markdown>
-          <textarea data-template>
-## Earnings Highlights (Markdown Slide)
+      <aside class="notes">
+        Mention the report purpose and your email for follow-ups.
+      </aside>
+    </section>
 
-- **Revenue growth**: 12% YoY
-- **Net income**: ₹ 450 Cr
-- **EPS** (Earnings Per Share): ₹ 27.5  
-- **Key drivers**:
-  - Retail lending
-  - Digital payments
-  - Wealth management
+    <!-- MARKDOWN SLIDE -->
+    <section data-markdown>
+      <textarea data-template>
+## Earnings Highlights (Markdown)
 
-Note: This slide is written in **Markdown** using RevealJS's markdown plugin.
-          </textarea>
-          <aside class="notes">
-            Walk through the key highlights. Emphasize growth and 
-            critical revenue drivers. Keep this high-level.
-          </aside>
-        </section>
+- Revenue Increased 14%
+- YOY Net Profit Growth 21%
+- Significant Digital Expansion
+- New Customer Acquisition Growth 12%
+      </textarea>
 
-        <!-- ANIMATED FRAGMENTS SLIDE -->
-        <section>
-          <h2>Revenue Breakdown</h2>
-          <p>Hover or step through to reveal components.</p>
-          <ul>
-            <li class="fragment">Retail Banking – 45%</li>
-            <li class="fragment">Corporate Banking – 30%</li>
-            <li class="fragment">Investment Services – 15%</li>
-            <li class="fragment">Other Income – 10%</li>
-          </ul>
-          <aside class="notes">
-            Use fragments to reveal each component as you speak.
-            Explain how each segment contributed to overall performance.
-          </aside>
-        </section>
+      <aside class="notes">
+        Show how markdown works live.
+      </aside>
+    </section>
 
-        <!-- CODE SAMPLE WITH SYNTAX HIGHLIGHTING -->
-        <section>
-          <h2>Sample Analytics Code</h2>
-          <pre><code class="language-python" data-trim>
-import pandas as pd
+    <!-- SLIDE WITH FRAGMENTS -->
+    <section>
+      <h3>Growth Drivers</h3>
+      <ul>
+        <li class="fragment">Retail Banking Portfolio</li>
+        <li class="fragment">Digital Payments Ecosystem</li>
+        <li class="fragment">Corporate Investment Channels</li>
+      </ul>
 
-# Quarterly revenue figures in ₹ Cr
-revenue = pd.Series([1450, 1580, 1620, 1705],
-                    index=["Q1", "Q2", "Q3", "Q4"])
+      <aside class="notes">
+        Reveal one item at a time while speaking.
+      </aside>
+    </section>
 
-growth_rate = revenue.pct_change() * 100
-print("Quarterly growth (%)")
-print(growth_rate.round(2))
-          </code></pre>
-          <aside class="notes">
-            Show stakeholders that the analysis is reproducible and 
-            data-driven. Mention that Python is used for time series 
-            analysis, forecasting, and stress testing.
-          </aside>
-        </section>
+    <!-- CODE SAMPLE WITH SYNTAX HIGHLIGHTING -->
+    <section>
+      <h3>Sample Forecast Code</h3>
+      <pre><code class="language-python">
+import numpy as np
 
-        <!-- MATH / FINANCIAL FORMULAS -->
-        <section>
-          <h2>Key Financial Formula</h2>
-          <p>Discounted Cash Flow (DCF) valuation:</p>
-          <p>
-            \[
-              V_0 = \sum_{t=1}^{N} \frac{CF_t}{(1 + r)^t}
-            \]
-          </p>
-          <p>Where:</p>
-          <ul>
-            <li class="fragment">\(V_0\): Present value of the asset</li>
-            <li class="fragment">\(CF_t\): Cash flow at time \(t\)</li>
-            <li class="fragment">\(r\): Discount rate</li>
-            <li class="fragment">\(N\): Number of periods</li>
-          </ul>
-          <aside class="notes">
-            Briefly explain how DCF is used internally for project and
-            portfolio valuation. Connect this to the firm’s cost of capital.
-          </aside>
-        </section>
+quarter_data = [425, 470, 510, 550]
+growth_rate = np.diff(quarter_data) / quarter_data[:-1] * 100
+print(growth_rate)
+      </code></pre>
 
-        <!-- CLOSING SLIDE -->
-        <section>
-          <h2>Questions &amp; Next Steps</h2>
-          <ul>
-            <li class="fragment">Clarifications on quarterly figures</li>
-            <li class="fragment">Deep-dive sessions by business unit</li>
-            <li class="fragment">Roadmap for next quarter</li>
-          </ul>
-          <p style="margin-top: 1em; font-size: 0.8em;">
-            Contact: <strong>22f2001173@ds.study.iitm.ac.in</strong>
-          </p>
-          <aside class="notes">
-            Invite questions and mention follow-up workshops or 
-            one-on-one sessions for detailed financial discussions.
-          </aside>
-        </section>
+      <aside class="notes">
+        Briefly explain forecasting logic.
+      </aside>
+    </section>
 
-      </div>
-    </div>
+    <!-- MATH FORMULA -->
+    <section>
+      <h3>Financial Equation</h3>
+      <p>
+      \[
+          EPS = \frac{Net\ Profit}{No.\ of\ Shares}
+      \]
+      </p>
 
-    <!-- Reveal.js core library -->
-    <script src="https://unpkg.com/reveal.js@5/dist/reveal.js"></script>
+      <aside class="notes">
+        Explain EPS metrics to stakeholders.
+      </aside>
+    </section>
 
-    <!-- Plugins -->
-    <script src="https://unpkg.com/reveal.js@5/plugin/markdown/markdown.js"></script>
-    <script src="https://unpkg.com/reveal.js@5/plugin/highlight/highlight.js"></script>
-    <script src="https://unpkg.com/reveal.js@5/plugin/math/math.js"></script>
+    <!-- CLOSING SLIDE -->
+    <section>
+      <h2>Thank You!</h2>
+      <p>Contact: <strong>22f2001173@ds.study.iitm.ac.in</strong></p>
 
-    <script>
-      Reveal.initialize({
-        hash: true,
-        plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX ],
-        // Optional: center: true,
-      });
-    </script>
-  </body>
+      <aside class="notes">
+        End with open questions.
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+<!-- Reveal Scripts -->
+<script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
+
+<script>
+  Reveal.initialize({
+    hash: true,
+    plugins: [
+      RevealMarkdown,
+      RevealHighlight,
+      RevealMath.KaTeX
+    ]
+  });
+</script>
+
+</body>
 </html>
