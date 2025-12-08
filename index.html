@@ -1,115 +1,125 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Quarterly Earnings Report</title>
+<head>
+  <meta charset="utf-8">
+  <title>Quarterly Earnings Presentation</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" id="theme">
+  <!-- RevealJS Core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
 
-    <!-- Code highlight style -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+  <!-- Highlight Theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
 
-    <style>
-      .highlight-metric {
-        font-size: 2.5rem;
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
+  <style>
+    .important-metric {
+      font-size: 2rem;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
 
-        <!-- Title slide (email clearly visible) -->
-        <section>
-          <h1>Q4 Earnings Report</h1>
-          <p>Technical Consultant, Financial Analytics Division</p>
-          <p><strong>Email:</strong> 22f2001173@ds.study.iitm.ac.in</p>
-        </section>
+<body>
+<div class="reveal">
+  <div class="slides">
 
-        <!-- Markdown slide -->
-        <section data-markdown>
-          <textarea data-template>
-## Agenda
+    <!-- SLIDE 1 - Email visible -->
+    <section>
+      <h1>Quarterly Earnings Report – Q4</h1>
+      <p><strong>Email:</strong> 22f2001173@ds.study.iitm.ac.in</p>
+      <aside class="notes">
+        Introduce yourself and mention that this is an interactive RevealJS report.
+      </aside>
+    </section>
 
-- Overview of quarterly performance
-- Revenue and cost breakdown
-- Risk analysis & projections
-- Q&A
-          </textarea>
-        </section>
+    <!-- SLIDE 2 - Markdown -->
+    <section data-markdown>
+      <textarea data-template>
+## Index
 
-        <!-- Fragments (animated elements) -->
-        <section>
-          <h2>Key Highlights</h2>
-          <ul>
-            <li class="fragment">Revenue growth: <span class="highlight-metric">+12.5%</span></li>
-            <li class="fragment">Operating margin improved by 1.8%</li>
-            <li class="fragment fade-up">Net profit up by 9.3%</li>
-          </ul>
-          <aside class="notes">
-            Reveal each point slowly; emphasize that growth is both on top line and margins.
-          </aside>
-        </section>
+- Revenue Trends
+- Performance Metrics
+- Pipeline Processing
+- Financial Ratios
+      </textarea>
+    </section>
 
-        <!-- Code sample with syntax highlighting -->
-        <section>
-          <h2>Example: Earnings Data Pipeline</h2>
-          <pre><code class="language-python" data-line-numbers="1-3|5-7">
+    <!-- SLIDE 3 - Fragments -->
+    <section>
+      <h2>Key Metrics Overview</h2>
+      <ul>
+        <li class="fragment">Revenue Growth: <span class="important-metric">+12.5%</span></li>
+        <li class="fragment">Net Profit Increase: <span class="important-metric">+9.3%</span></li>
+        <li class="fragment fade-up">Operating Margin Improvement</li>
+      </ul>
+      <aside class="notes">
+        Reveal metrics one by one for emphasis.
+      </aside>
+    </section>
+
+    <!-- SLIDE 4 - Code Highlight -->
+    <section>
+      <h2>Python Code Example</h2>
+      <pre><code class="language-python" data-line-numbers="1-3|5-9">
 import pandas as pd
 
 df = pd.read_csv("earnings.csv")
-df["margin"] = df["net_profit"] / df["revenue"]
 
-q4_summary = (
-    df.groupby("segment")[["revenue", "net_profit", "margin"]]
-      .sum()
-)
-print(q4_summary)
-          </code></pre>
-          <aside class="notes">
-            Explain how the internal analytics pipeline calculates margin and aggregates by segment.
-          </aside>
-        </section>
+df["net_margin"] = df["net_profit"] / df["revenue"]
 
-        <!-- Math / financial formula -->
-        <section>
-          <h2>Return on Equity (ROE)</h2>
-          <p>We monitor shareholder value using ROE:</p>
-          <p>
-            \[
-              ROE = \frac{\text{Net Income}}{\text{Shareholders' Equity}}
-            \]
-          </p>
-          <p class="fragment">
-            Example: If net income is \$250M and equity is \$1B, then:
-          </p>
-          <p class="fragment">
-            \[
-              ROE = \frac{250}{1000} = 0.25 = 25\%
-            \]
-          </p>
-          <aside class="notes">
-            Stress that sustained ROE above sector median is a key objective.
-          </aside>
-        </section>
+summary = df.groupby("division")[["revenue", "net_profit", "net_margin"]].sum()
+print(summary)
+      </code></pre>
+      <aside class="notes">
+        This code demonstrates backend processing of division-wise earnings.
+      </aside>
+    </section>
 
-      </div>
-    </div>
+    <!-- SLIDE 5 - Math Formula -->
+    <section>
+      <h2>Financial Ratio: Return on Equity (ROE)</h2>
+      <p>Formula used for profitability analysis:</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+      <p>
+        \[
+          ROE = \frac{\text{Net Income}}{\text{Shareholders' Equity}}
+        \]
+      </p>
 
-    <script>
-      Reveal.initialize({
-        hash: true,
-        plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ]
-      });
-    </script>
-  </body>
+      <p class="fragment">
+        Example:
+        \[
+          ROE = \frac{250}{1000} = 0.25 = 25\%
+        \]
+      </p>
+
+      <aside class="notes">
+        Explain ROE as the most important shareholder-focused metric.
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+<!-- JS Files -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+
+<script>
+  Reveal.initialize({
+    hash: true,
+    plugins: [
+      RevealMarkdown,
+      RevealHighlight,
+      RevealNotes,
+      RevealMath.KaTeX
+    ]
+  });
+</script>
+
+</body>
 </html>
-
